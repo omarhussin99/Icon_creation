@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background_logo"
+            tools:context=".presentation.ui.HomeActivity">
+
+            <ImageView
+                android:id="@+id/shops_image"
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/shops"
+                android:contentDescription="@string/app_name" />
+
+            <ImageView
+                android:id="@+id/search_image"
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/shops_image"
+                app:layout_constraintStart_toEndOf="@+id/shops_image"
+                app:layout_constraintTop_toTopOf="@+id/shops_image"
+                app:srcCompat="@drawable/search"
+                android:contentDescription="@string/app_name" />
+
+            <ImageView
+                android:id="@+id/filter_image"
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/filter"
+                android:contentDescription="@string/app_name" />
+
+            <ImageView
+                android:id="@+id/wish_list_image"
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/filter_image"
+                app:layout_constraintEnd_toStartOf="@+id/filter_image"
+                app:layout_constraintTop_toTopOf="@+id/filter_image"
+                app:srcCompat="@drawable/fav"
+                android:contentDescription="@string/app_name" />
+
+            <ImageView
+                android:id="@+id/logo_image"
+                android:layout_width="@dimen/_42sdp"
+                android:layout_height="@dimen/_42sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/dark_logo"
+                android:contentDescription="@string/app_name" />
+
+            <ScrollView
+                android:id="@+id/scrollView2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/chipNavigationBar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/logo_image"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/discover_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/discover"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:visibility="invisible"
+                        tools:visibility="visible"/>
+
+                    <com.yarolegovich.discretescrollview.DiscreteScrollView
+                        android:id="@+id/categories_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/discover_text"
+                        android:visibility="invisible"
+                        tools:visibility="visible"/>
+
+                    <TextView
+                        android:id="@+id/whats_new_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_marginTop="@dimen/_18sdp"
+                        android:text="@string/what_s_new"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/categories_list"
+                        android:visibility="invisible"
+                        tools:visibility="visible"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/new_products_list"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/whats_new_text"
+                        android:visibility="invisible"
+                        tools:visibility="visible"/>
+
+                    <TextView
+                        android:id="@+id/trending_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:text="@string/trending"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/whats_new_text"
+                        app:layout_constraintTop_toBottomOf="@+id/new_products_list"
+                        android:visibility="invisible"
+                        tools:visibility="visible"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/trending_products_list"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:layout_marginBottom="@dimen/_62sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/trending_text"
+                        android:visibility="invisible"
+                        tools:visibility="visible"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </ScrollView>
+
+            <com.ismaeldivita.chipnavigation.ChipNavigationBar
+                android:id="@+id/chipNavigationBar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:background="@drawable/bottom_nav_shape"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:elevation="@dimen/_16sdp"
+                app:cnb_menuResource="@menu/menu_bottom"
+                android:visibility="invisible"
+                tools:visibility="visible"
+                >
+
+            </com.ismaeldivita.chipnavigation.ChipNavigationBar>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background_logo"
+            android:gravity="center"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading"
+            tools:visibility="gone"/>
+
+    </FrameLayout>
+
+</layout>

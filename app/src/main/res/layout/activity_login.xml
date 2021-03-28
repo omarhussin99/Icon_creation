@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="clickHandler"
+            type="com.realness.iconcreation.ui.view.LoginActivity.LoginActivityClickHandler" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".presentation.ui.LoginActivity">
+
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:transitionName="logo_transition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_22sdp"
+            android:src="@drawable/colored_logo"
+            android:contentDescription="@string/app_name" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/number_input_field"
+            style="@style/SignInInputField"
+            app:counterTextColor="@color/pinkMain"
+            app:startIconDrawable="@drawable/ic_smartphone"
+            android:visibility="invisible"
+            tools:visibility="visible">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/user_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gradient_color_sign_in"
+                android:hint="@string/phoneNumber"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textSize="@dimen/_11sdp"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/number_input_field3"
+            style="@style/SignInInputField"
+            app:passwordToggleEnabled="true"
+            app:startIconDrawable="@drawable/ic_lock_open"
+            android:visibility="invisible"
+            tools:visibility="visible">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gradient_color_sign_in"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:textSize="@dimen/_11sdp"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/forget_password_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginEnd="@dimen/_36sdp"
+            android:text="@string/forget_password"
+            android:textColor="@color/pinkMain"
+            android:textSize="@dimen/_10sdp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            tools:visibility="visible"/>
+
+
+        <TextView
+            android:id="@+id/sign_in_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_26sdp"
+            android:background="@drawable/gradient_color_sign_in"
+            android:foreground="?android:selectableItemBackground"
+            android:onClick= "@{clickHandler::login}"
+            android:paddingStart="@dimen/_32sdp"
+            android:paddingTop="@dimen/_7sdp"
+            android:paddingEnd="@dimen/_32sdp"
+            android:paddingBottom="@dimen/_7sdp"
+            android:text="@string/sign_in"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="invisible"
+            tools:visibility="visible"
+            />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading"
+            android:layout_width="@dimen/_42sdp"
+            android:layout_height="@dimen/_42sdp"
+            app:lottie_rawRes="@raw/loading_pink"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/_10sdp"
+            />
+
+
+        <TextView
+            android:id="@+id/register_button"
+            style="@style/TextLogin"
+            android:text="@string/check_sign_up"
+            android:visibility="invisible"
+            tools:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/skip_button"
+            style="@style/TextLogin"
+            android:text="@string/skip"
+            android:visibility="invisible"
+            tools:visibility="visible"
+            android:onClick="@{clickHandler::skipLogin}"/>
+
+    </LinearLayout>
+
+    </ScrollView>
+
+
+</layout>

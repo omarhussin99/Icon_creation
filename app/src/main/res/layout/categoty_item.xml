@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="category"
+            type="com.realness.iconcreation.data.model.categoryResponse.Category" />
+    </data>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/_180sdp"
+            android:layout_height="@dimen/_140sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:cardCornerRadius="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_4sdp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:srcCompat="@tools:sample/avatars"
+                android:scaleType="centerCrop"
+                android:imageUrl="@{category.image}"
+                android:contentDescription="@string/app_name" />
+
+        </androidx.cardview.widget.CardView>
+
+</layout>

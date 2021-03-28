@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Icon Creation</string>
+    <string name="phoneNumber">Phone number</string>
+    <string name="password">Password</string>
+    <string name="forget_password">Forget password</string>
+    <string name="sign_in">Sign in</string>
+    <string name="check_sign_up">Don\'t have an account? Sign up</string>
+    <string name="skip">Skip</string>
+    <string name="discover">Discover</string>
+    <string name="what_s_new">What\'s New!</string>
+    <string name="trending">Trending</string>
+    <string name="connection">Server error</string>
+    <string name="home">Home</string>
+    <string name="exclusive">Exclusive</string>
+    <string name="basket">Basket</string>
+    <string name="profile">Profile</string>
+</resources>
